@@ -20,8 +20,8 @@ PyCharm has built-in support for Poetry. Let's explore it.
 
 Follow these instructions to build and run the example project.
 
-1. Pre-requisite: Python
-   * I'm using Python 3.11.3
+1. Pre-requisite: `poetry`
+   * I'm using Python 3.11.3 and installed `poetry` 1.4.2 via `npx`
 2. Run the example program
    * ```shell
      poetry run python main.py
