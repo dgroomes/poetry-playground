@@ -50,8 +50,8 @@ Below are some stream of consciousness notes:
 
 General clean ups, TODOs and things I wish to implement for this project:
 
-* [ ] IN PROGRESS Do a small "hello world" thing using a library.
-   * I want to do a word count of my README.md and save to a CSV file.
+* [x] DONE Do a small "hello world" thing using a library.
+   * I want to do a word count of my README.md into a Pandas DataFrame.
 * [ ] What does packaging look like?
 * [x] DONE Use the `__main__.py` pattern so that we can run the project with `-m` instead of pointing to a file.
 

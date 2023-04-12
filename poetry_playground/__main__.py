@@ -1,8 +1,8 @@
-from poetry_playground.utility_module import say_hello
+from poetry_playground.word_count import word_count
 
 
 def main():
-    say_hello()
+    word_count()
 
 
 if __name__ == "__main__":
