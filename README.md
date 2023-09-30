@@ -21,8 +21,12 @@ PyCharm has built-in support for Poetry. Let's explore it.
 Follow these instructions to build and run the example project.
 
 1. Pre-requisite: `poetry`
-   * I'm using Python 3.11.3 and installed `poetry` 1.4.2 via `npx`
-2. Run the example program
+   * I'm using Python 3.11.5 and installed `poetry` 1.6.1 via `pipx`
+2. Install dependencies
+   * ```shell
+     poetry install
+     ```
+3. Run the example program
    * ```shell
      poetry run python -m poetry_playground
      ```
@@ -48,7 +52,7 @@ Below are some stream of consciousness notes:
 
 ## Wish List
 
-General clean ups, TODOs and things I wish to implement for this project:
+General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Do a small "hello world" thing using a library.
    * I want to do a word count of my README.md into a Pandas DataFrame.
