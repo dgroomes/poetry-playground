@@ -6,9 +6,10 @@ authors = ["David Groomes <dwgroomes@gmail.com>"]
 readme = "README.md"
 packages = [{include = "poetry_playground"}]
 
+
 [tool.poetry.dependencies]
-python = "^3.11"
-pandas = "^2.0.0"
+python = "^3.12"
+pandas = "^2.2.2"
 
 
 [build-system]

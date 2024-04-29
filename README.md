@@ -6,7 +6,7 @@
 > 
 > -- <cite>https://python-poetry.org</cite>
 
-**NOTE**: This project was developed on macOS and for my own personal use.
+**NOTE**: This project was developed on macOS. It is designed for my own personal use.
 
 
 ## Overview
@@ -20,8 +20,8 @@ PyCharm has built-in support for Poetry. Let's explore it.
 
 Follow these instructions to build and run the example project.
 
-1. Pre-requisite: `poetry`
-   * I'm using Python 3.11.5 and installed `poetry` 1.6.1 via `pipx`
+1. Pre-requisite: Poetry
+   * I'm using Python 3.12.3 and installed `poetry` 1.8.2 via `pipx`
 2. Install dependencies
    * ```shell
      poetry install
@@ -42,12 +42,13 @@ want to learn so much about the build tools.
 
 Below are some stream of consciousness notes:
 
-* I gather that pipx is probably a good choice? I haven't figured out if I need/want virtual environments.
 * Stick with `python3` and `pip3` because `python` and `pip` are for macOS-provided distributions. Those are old.
-* `pip3 install --user pipx`
+* `brew install pipx`
 * `pipx install poetry`
-* `poetry completions bash > ${XDG_DATA_HOME:-~/.local/share}/bash-completion/completions/poetry`
+* `pip3 install --user pipx`
+* `poetry completions bash > ~/.local/share/bash-completion/completions/poetry`
 * `poetry init`
+* `poetry lock`
 
 
 ## Wish List
