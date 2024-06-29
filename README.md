@@ -11,9 +11,9 @@
 
 ## Overview
 
-This repository is for me to learn Poetry and have working example code/configuration that I look back on in my future
-development in the Python ecosystem. Personally, I like to use JetBrains IDEs, and I'm using PyCharm for this project.
-PyCharm has built-in support for Poetry. Let's explore it.
+This repository is for me to learn Poetry and have working example code and configuration that I can look back on in my
+future development in the Python ecosystem. Personally, I like to use JetBrains IDEs, and I'm using PyCharm for this
+project. PyCharm has built-in support for Poetry. Let's explore Poetry.
 
 
 ## Instructions
@@ -21,12 +21,29 @@ PyCharm has built-in support for Poetry. Let's explore it.
 Follow these instructions to build and run the example project.
 
 1. Pre-requisite: Poetry
-   * I'm using Python 3.12.3 and installed `poetry` 1.8.2 via `pipx`
-2. Install dependencies
+   * I'm using Poetry `1.8.3` which I installed via `pipx`.
+2. Pre-requisite: Python
+   * I'm using Python `3.12.3` which is available on my PATH as `python3` and `python3.12`.
+3. Create a virtual environment
+   * ```shell
+     poetry env use python3.12
+     ```
+   * This will create a virtual environment tied to the Python interpreter pointed to by `python3.12` executable (or
+     symlink) in a global cache directory that Poetry manages. Use the following command to see details about the
+     virtual environment you just created.
+   * ```shell
+     poetry env info
+     ```
+   * For me, the output shows that the Python interpreter is located at `/opt/homebrew/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/bin/python3.12`.
+     Manually creating a virtual environment in this way is actually not necessary. The first time you run `poetry install`,
+     Poetry will automatically search for and use a Python interpreter matching the version specified in `pyproject.toml`.
+     If it finds one (I don't know the algorithm it uses, but I suppose it just looks for executables on the PATH named
+     `python3.11`, `python3.12`, etc.) then it creates the virtual environment before running the rest of the command. 
+4. Install dependencies
    * ```shell
      poetry install
      ```
-3. Run the example program
+5. Run the example program
    * ```shell
      poetry run python -m poetry_playground
      ```
@@ -42,11 +59,11 @@ want to learn so much about the build tools.
 
 Below are some stream of consciousness notes:
 
-* Stick with `python3` and `pip3` because `python` and `pip` are for macOS-provided distributions. Those are old.
 * `brew install pipx`
+* `pipx install argcomplete`
+* (Nushell) `register-python-argcomplete pipx | save ~/.local/share/bash-completion/completions/pipx` 
 * `pipx install poetry`
-* `pip3 install --user pipx`
-* `poetry completions bash > ~/.local/share/bash-completion/completions/poetry`
+* (Nushell) `poetry completions bash | save ~/.local/share/bash-completion/completions/poetry`
 * `poetry init`
 * `poetry lock`
 
@@ -59,6 +76,7 @@ General clean-ups, TODOs and things I wish to implement for this project:
    * I want to do a word count of my README.md into a Pandas DataFrame.
 * [ ] What does packaging look like?
 * [x] DONE Use the `__main__.py` pattern so that we can run the project with `-m` instead of pointing to a file.
+* [x] DONE Explore how Poetry interfaces with virtual environment.
 
 
 ## Reference
