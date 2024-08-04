@@ -12,6 +12,10 @@ python = "~3.12"
 pandas = "~2.2.2"
 
 
+[tool.poetry.scripts]
+readme-word-count = "poetry_playground.__main__:main"
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

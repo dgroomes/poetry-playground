@@ -47,6 +47,28 @@ Follow these instructions to build and run the example project.
    * ```shell
      poetry run python -m poetry_playground
      ```
+6. Build a wheel distribution
+   * ```shell
+     poetry build
+     ```
+   * This will create a `dist` directory with a `.whl` file in it.
+7. Install the wheel distribution
+   * ```shell
+     pipx install dist/poetry_playground-0.1.0-py3-none-any.whl
+     ```
+   * It should successfully install an app/executable named `readme-word-count`. This name comes from the `tool.poetry.scripts`
+     section in `pyproject.toml`. The output of the installation will look something like the following.
+   * ```text
+     $ pipx install dist/poetry_playground-0.1.0-py3-none-any.whl
+     installed package poetry-playground 0.1.0, installed using Python 3.12.4
+     These apps are now globally available
+     - readme-word-count
+     done! ✨ 🌟 ✨
+     ```
+8. Try the `readme-word-count` command
+   * ```shell
+     readme-word-count
+     ```
 
 
 ## Notes
@@ -74,7 +96,11 @@ General clean-ups, TODOs and things I wish to implement for this project:
 
 * [x] DONE Do a small "hello world" thing using a library.
    * I want to do a word count of my README.md into a Pandas DataFrame.
-* [ ] What does packaging look like?
+* [x] DONE What does packaging look like? Pretty sure `pipx` is in the picture. UPDATE: Actually there is a
+  Poetry-native way to do this: [`poetry-plugin-bundle`](https://github.com/python-poetry/poetry-plugin-bundle). But,
+  it's a bit niche which makes me hesitate. On the other hands, the `pipx` way is not capturing the precision of the
+  locked dependencies that Poetry provides and is reflect in the `poetry.lock` file. Instead I'm seeing a very broad
+  `Requires-Dist: pandas (>=2.2.2,<2.3.0)` in the `METADATA` file in the wheel.
 * [x] DONE Use the `__main__.py` pattern so that we can run the project with `-m` instead of pointing to a file.
 * [x] DONE Explore how Poetry interfaces with virtual environment.
 
